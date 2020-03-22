@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
-docker build -t kloudough/mlflow:1.5 src
+MLFLOW_VERSION=$(cat version.txt)
+docker build -t "kloudough/mlflow:${MLFLOW_VERSION}" --build-arg "MLFLOW_VERSION=${MLFLOW_VERSION}" src
