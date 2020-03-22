@@ -15,7 +15,7 @@ RUN apk add --no-cache mariadb-connector-c-dev libstdc++ ;\
     apk del .build-deps
 RUN mkdir -p $DEFAULT_ARTIFACT_ROOT $BACKEND_STORE_URI && chown mlflow:mlflow $DEFAULT_ARTIFACT_ROOT $BACKEND_STORE_URI
 USER mlflow
-ADD start.sh /start.sh
+ADD --chown=mlflow:mlflow start.sh /start.sh
 
 CMD /start.sh
 
