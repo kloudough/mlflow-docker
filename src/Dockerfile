@@ -11,7 +11,7 @@ RUN apk add --no-cache mariadb-connector-c-dev libstdc++ ;\
     apk add --no-cache --virtual .build-deps \
         build-base \
         mariadb-dev ;\
-#    pip3 install --upgrade pip && pip3 install mlflow==${MLFLOW_VERSION} mysqlclient==1.4.6;\
+    pip3 install --upgrade pip && pip3 install mlflow==${MLFLOW_VERSION} mysqlclient==1.4.6;\
     apk del .build-deps
 RUN mkdir -p $DEFAULT_ARTIFACT_ROOT $BACKEND_STORE_URI && chown mlflow:mlflow $DEFAULT_ARTIFACT_ROOT $BACKEND_STORE_URI
 USER mlflow
